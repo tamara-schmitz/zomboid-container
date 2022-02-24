@@ -19,7 +19,8 @@ For Docker:
 docker pull ghcr.io/tamara-schmitz/zomboid-container && \
 docker run -d --rm --name zomboid \
     -p 16261/udp -p 8766/udp \
-    -v /the/folder/where/you/want/to/put/the/game:/game \
+    -v /path/of/game:/game \
+    -v /path/of/savefiles:/save \
     -e SERVER_NAME="myserver" \
     -e ADMIN_PASSWORD="badpassword" \
     ghcr.io/tamara-schmitz/zomboid-container
@@ -31,7 +32,8 @@ For Podman:
 podman pull ghcr.io/tamara-schmitz/zomboid-container && \
 podman run -d --rm --name zomboid \
     -p 16261/udp -p 8766/udp \
-    -v /the/folder/where/you/want/to/put/the/game:/game \
+    -v /path/of/game:/game \
+    -v /path/of/savefiles:/save \
     -e SERVER_NAME="myserver" \
     -e ADMIN_PASSWORD="badpassword" \
     ghcr.io/tamara-schmitz/zomboid-container
@@ -48,3 +50,5 @@ There are other options that you can use as well.
 | `-e STEAMVAC="true"` | Deactivate Steam's Anti-cheat if you want with this |
 | `-e MEMORY_HEAP_MIN="2g"` | Sets the Java Heap size. Basically `-Xms 2g` |
 | `-e MEMORY_HEAP_MAX="2g"` | Sets the Java Heap size. Basically `-Xmx 2g` |
+| `-e JAVA_EXTRA_ARGS="-XX:+ExplicitGCInvokesConcurrent -XX:+AlwaysPreTouch -XX:+UseThreadPriorities"` | Here you can add extra arguments to be passed to JVM. |
+| `-e JAVA_USE_NATIVE="false"` | If you set this to `true`, the native Java version of this container will be used instead of the outdated bundled version by the game developer. Turn back off if you run into issues. |
