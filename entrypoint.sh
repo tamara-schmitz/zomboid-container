@@ -1,6 +1,11 @@
 #!/bin/sh
 set -xeu
 
+# Remove Java Native Symlink
+if [ -L "${GAME_FOLDER}/jre64" ]; then
+    rm "${GAME_FOLDER}/jre64"
+fi
+
 echo "Update server"
 nice -n19 steamcmd \
    +force_install_dir "${GAME_FOLDER}" \
@@ -8,15 +13,15 @@ nice -n19 steamcmd \
    +app_update ${STEAM_GAME} validate \
    +quit
 
+# Replace bunlded Java with upstream Java
 if [ ${JAVA_USE_NATIVE} == "true" ]; then
-    echo "Replace bunlded Java with upstream Java"
     rm -rf "${GAME_FOLDER}/jre64"
     ln -s /usr/lib64/jvm/jre "${GAME_FOLDER}/jre64"
 fi
 
-if [ -f "${GAME_FOLDER}/Zomboid/Server/${SERVER_NAME}.ini" ]; then
+if [ -f "${SAVE_FOLDER}/Server/${SERVER_NAME}.ini" ]; then
     echo "Turn off UPnP"
-    sed -i "s/UPnP=true/UPnP=false/" "${GAME_FOLDER}/Zomboid/Server/${SERVER_NAME}.ini"
+    sed -i "s/UPnP=true/UPnP=false/" "${SAVE_FOLDER}/Server/${SERVER_NAME}.ini"
 fi
 
 echo "Start server"
