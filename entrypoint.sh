@@ -1,5 +1,5 @@
 #!/bin/sh
-set -xeu
+set -xeuo
 
 # Remove Java Native Symlink
 if [ -L "${GAME_FOLDER}/jre64" ]; then
