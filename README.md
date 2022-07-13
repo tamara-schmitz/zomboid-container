@@ -51,4 +51,3 @@ There are other options that you can use as well.
 | `-e MEMORY_HEAP_MIN="2g"` | Sets the Java Heap size. Basically `-Xms 2g` |
 | `-e MEMORY_HEAP_MAX="2g"` | Sets the Java Heap size. Basically `-Xmx 2g` |
 | `-e JAVA_EXTRA_ARGS="-XX:+ExplicitGCInvokesConcurrent -XX:+AlwaysPreTouch -XX:+UseThreadPriorities"` | Here you can add extra arguments to be passed to JVM. |
-| `-e JAVA_USE_NATIVE="false"` | If you set this to `true`, the native Java version of this container will be used instead of the outdated bundled version by the game developer. Turn back off if you run into issues. |

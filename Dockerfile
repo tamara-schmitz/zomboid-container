@@ -13,7 +13,6 @@ ENV MEMORY_HEAP_MAX "2g"
 ENV JAVA_EXTRA_ARGS "-XX:+ExplicitGCInvokesConcurrent \
         -XX:+AlwaysPreTouch \
         -XX:+UseThreadPriorities"
-ENV JAVA_USE_NATIVE "false"
 
 RUN zypper --non-interactive install --auto-agree-with-licenses \
         steamcmd
