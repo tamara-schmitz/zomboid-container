@@ -23,6 +23,6 @@ echo "Start server"
     -servername ${SERVER_NAME} \
     -adminpassword ${ADMIN_PASSWORD} \
     -steamvac ${STEAMVAC} \
-    -port ${PORT_GAME} \
+    -port ${PORT_GAME1} \
     -steamport1 ${PORT_STEAM} \
     $@
