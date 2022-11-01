@@ -18,7 +18,7 @@ For Docker:
 ```sh
 docker pull ghcr.io/tamara-schmitz/zomboid-container && \
 docker run -d --rm --name zomboid \
-    -p 16261:16261/udp -p 8766:8766/udp \
+    -p 16261:16261/udp -p 16262:16262/udp -p 8766:8766/udp \
     -v /path/of/game:/game \
     -v /path/of/savefiles:/save \
     -e SERVER_NAME="myserver" \
@@ -31,7 +31,7 @@ For Podman:
 ```sh
 podman pull ghcr.io/tamara-schmitz/zomboid-container && \
 podman run -d --rm --name zomboid \
-    -p 16261:16261/udp -p 8766:8766/udp \
+    -p 16261:16261/udp -p 16262:16262/udp -p 8766:8766/udp \
     -v /path/of/game:/game \
     -v /path/of/savefiles:/save \
     -e SERVER_NAME="myserver" \
@@ -45,7 +45,8 @@ There are other options that you can use as well.
 | - | - |
 | `-e SERVER_NAME="tumbleserver"` | Set the server name |
 | `-e ADMIN_PASSWORD="badlol"` | Set the administrator password |
-| `-e PORT_GAME=16261` | Change the port that your game runs on. This has to match the port that you publish using `-p 16261:16261/udp`. |
+| `-e PORT_GAME1=16261` | Change the port that your game runs on. This has to match the port that you publish using `-p 16261:16261/udp`. |
+| `-e PORT_GAME2=16262` | Change the port that your game runs on. This has to match the port that you publish using `-p 16262:16262/udp`. |
 | `-e PORT_STEAM=8766` | Change the port that Steam uses for its communication. This has to match the port that you publish using `-p 8766:8766/udp`.|
 | `-e STEAMVAC="true"` | Deactivate Steam's Anti-cheat if you want with this |
 | `-e MEMORY_HEAP_MIN="4g"` | Sets the Java Heap size. Basically `-Xms 4g` |
