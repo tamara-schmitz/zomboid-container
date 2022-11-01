@@ -1,4 +1,4 @@
-FROM registry.opensuse.org/opensuse/openjdk:15
+FROM registry.opensuse.org/opensuse/tumbleweed
 
 ENV GAME_FOLDER "/game"
 ENV SAVE_FOLDER "/save"
