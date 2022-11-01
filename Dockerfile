@@ -8,8 +8,8 @@ ENV PORT_STEAM 8766
 ENV SERVER_NAME "tumbleserver"
 ENV ADMIN_PASSWORD "badlol"
 ENV STEAMVAC "true"
-ENV MEMORY_HEAP_MIN "2g"
-ENV MEMORY_HEAP_MAX "2g"
+ENV MEMORY_HEAP_MIN "4g"
+ENV MEMORY_HEAP_MAX "4g"
 ENV JAVA_EXTRA_ARGS "-XX:+ExplicitGCInvokesConcurrent \
         -XX:+AlwaysPreTouch \
         -XX:+UseThreadPriorities"

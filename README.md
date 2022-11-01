@@ -48,6 +48,6 @@ There are other options that you can use as well.
 | `-e PORT_GAME=16261` | Change the port that your game runs on. This has to match the port that you publish using `-p 16261:16261/udp`. |
 | `-e PORT_STEAM=8766` | Change the port that Steam uses for its communication. This has to match the port that you publish using `-p 8766:8766/udp`.|
 | `-e STEAMVAC="true"` | Deactivate Steam's Anti-cheat if you want with this |
-| `-e MEMORY_HEAP_MIN="2g"` | Sets the Java Heap size. Basically `-Xms 2g` |
-| `-e MEMORY_HEAP_MAX="2g"` | Sets the Java Heap size. Basically `-Xmx 2g` |
+| `-e MEMORY_HEAP_MIN="4g"` | Sets the Java Heap size. Basically `-Xms 4g` |
+| `-e MEMORY_HEAP_MAX="4g"` | Sets the Java Heap size. Basically `-Xmx 4g` |
 | `-e JAVA_EXTRA_ARGS="-XX:+ExplicitGCInvokesConcurrent -XX:+AlwaysPreTouch -XX:+UseThreadPriorities"` | Here you can add extra arguments to be passed to JVM. |
